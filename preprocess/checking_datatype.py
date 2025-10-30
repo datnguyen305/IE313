@@ -19,6 +19,6 @@ class DataTypeChecker:
         return df_dtype_mapping
 
 if __name__ == "__main__":
-    data = pd.read_csv('dataset/health_lifestyle_dataset.csv')
+    data = pd.read_csv('../dataset/health_lifestyle_dataset.csv')
     check = DataTypeChecker(data)
     check.check_column_types(show=True)
