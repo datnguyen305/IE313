@@ -11,7 +11,7 @@ class StatisticsAnalyzer:
         self.numeric_df = dataframe.select_dtypes(include='number')
         print(f"Chọn {len(self.numeric_df.columns)} là cột dữ liệu số để phân tích.")
 
-    def calculate_spread_metrics(self):
+    def calculate_spread_metrics(self, show=True) -> pd.DataFrame:
         """
         Các độ đo bao gồm: Range, Variance, Standard Deviation
         """
@@ -33,4 +33,6 @@ class StatisticsAnalyzer:
             'Std_Deviation': std_dev,
         })
 
+        if show:
+            print(spread_df)
         return spread_df
