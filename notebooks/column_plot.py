@@ -58,3 +58,8 @@ def show(data, column_name, bins=5):
     plt.grid(axis='y', linestyle='--', alpha=0.7)
     plt.tight_layout()
     plt.show()
+
+
+#if __name__ == "__main__":
+ #   df = pd.read_csv('../dataset/health_lifestyle_dataset.csv')
+  #  show(df, 'bmi')
