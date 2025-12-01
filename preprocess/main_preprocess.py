@@ -6,7 +6,7 @@ from metrics_of_spread import StatisticsAnalyzer
 import pandas as pd 
 if __name__ == "__main__":
     print("This is the IE313.preprocess package.")
-    data = pd.read_csv('../dataset/health_lifestyle_dataset.csv')
+    data = pd.read_csv('./dataset/health_lifestyle_dataset.csv')
     dtype_check = DataTypeChecker(data)
     dtype_check.check_column_types(show=True) 
 
