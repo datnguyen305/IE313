@@ -45,3 +45,13 @@ class DataSplitter:
                 print("Đã lưu các files csv")
 
         return X_train, X_test, y_train, y_test
+
+if __name__ == '__main__':
+    df = pd.read_csv('./dataset/health_lifestyle_dataset.csv')
+    splitter = DataSplitter(dataframe=df, target_column='bmi')
+
+    X_train, X_test, y_train, y_test = splitter.split(
+        test_size=0.2,
+        exclude_columns=['Person ID'],  # Thử loại bỏ cột ID
+        save_folder='test_split_output'  # Lưu kết quả test vào đây
+    )
