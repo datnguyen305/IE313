@@ -5,6 +5,7 @@ from IE313.visualize import box_plot
 from IE313.visualize import scatter_plot
 from IE313.visualize import heatmap_plot
 from IE313.visualize import histogram_plot
+from IE313.visualize import column_plot
 
 class Visualizer:
     """
@@ -43,7 +44,7 @@ class Visualizer:
         scatter_plot.show(self.numeric_df, x_column, y_column)
 
     def show_heatmap(self):
-        """Gọi hàm vẽ biểu đồ nhiệt từ file heatmap_plot.py."""
+        """Gọi hàm vẽ biểu đồ nhiệt từ file heatmap_plot.py"""
         print("Biểu đồ nhiệt ma trận tương quan")
         heatmap_plot.show(self.numeric_df)
 
@@ -51,4 +52,15 @@ class Visualizer:
         """Gọi hàm vẽ histogram cho tất cả các cột số."""
         print("histograms cho tất cả các cột số")
         histogram_plot.show(self.numeric_df)
+
+    def show_column_plot(self, column_name):
+        """
+        Gọi hàm vẽ biểu đồ cột từ file column_plot.py
+        """
+        if column_name not in self.df.columns:
+            print(f"Lỗi: Cột '{column_name}' không tồn tại trong dữ liệu.")
+            return
+
+        print(f"Biểu đồ cột cho '{column_name}'...")
+        column_plot.show(self.df, column_name)
 
