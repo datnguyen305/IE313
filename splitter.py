@@ -47,7 +47,7 @@ class DataSplitter:
         return X_train, X_test, y_train, y_test
 
 if __name__ == '__main__':
-    df = pd.read_csv('./dataset/health_lifestyle_dataset.csv')
+    df = pd.read_csv('./health_lifestyle_dataset_zscore.csv')
     splitter = DataSplitter(dataframe=df, target_column='bmi')
 
     X_train, X_test, y_train, y_test = splitter.split(
